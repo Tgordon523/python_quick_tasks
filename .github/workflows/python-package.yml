@@ -26,7 +26,8 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Format with black
       uses: psf/black@stable
-      with:
+      with:  
+        options: '--target-version ${{ matrix.python-version }}'
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
